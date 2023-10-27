@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day 3</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+
+  </head>
+  <body>  
+    <span style="font-size:25px;">EnterAge:</span> <br>
+    <input v-model.number="age"type="number"> <br>
+    <span style="font-size:25px;">EnterMessage:</span> <br>
+    <input v-model.lazy="msg"> <br>
+    <span style="font-size:25px;">EnterMessage : </span> <br>
+    <input v-model.trim="message"> <br>
+
+    <br>
+  <div id="databinding">
+    <div  v-bind:style="styleobj"v-on:mouseover="changebgcolor"v-on:mouseout="originalcolor"></div>
+  </div>    
+  </body>
+
+  <script type="text/javascript">
+    var vm = new Vue({
+    el:'#databinding',
+    data:{
+      num1:100,
+      num2:200,
+    total:'',
+    styleobj:{
+      width:"100px",
+      height:"100px",
+    backgroundColor:"red"
+    }
+    },
+    methods:{
+    changebgcolor:function(){
+    this.styleobj.backgroundColor="#03b6fc";
+    },
+    originalcolor:function(){
+    this.styleobj.backgroundColor="#03fcf8";
+    }},
+    });
+</script>
+
+</html>
